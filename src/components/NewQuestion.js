@@ -43,7 +43,7 @@ class NewQuestion extends Component {
         this.setState(() => ({
             textOp1: '',
             textOp2: '',
-            toHome: id ? false : true
+            toHome: true
         }))
     }
     render() {
@@ -66,7 +66,7 @@ class NewQuestion extends Component {
                                     <Col><hr /></Col>OR<Col><hr /></Col>
                                 </Row>
                             </Container>
-                            <Form.Control required name="textOpt2" required placeholder="Enter Option Two Text Here"
+                            <Form.Control required name="textOpt2" placeholder="Enter Option Two Text Here"
                                 onChange={this.handleOp2} />
                         </Form.Group>
                         <Button variant="primary" onClick={this.handleSubmit}>Submit</Button>

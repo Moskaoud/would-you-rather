@@ -39,7 +39,7 @@ class QuestionPage extends Component {
         }
         let id = this.props.match.params.question_id
         let ans = this.props.location.param1 // answered qustion or not value from param1
-        let { questions, users } = this.props
+        let { questions, users, authedUser } = this.props
 
         if (questions[id] == null) {
             return (
@@ -91,30 +91,34 @@ class QuestionPage extends Component {
         }
         else {
             return (
-                <Card>
-                    <Card.Header style={{ textAlign: 'left' }}>{author} asks:</Card.Header>
-                    <Container>
-                        <Row>
-                            <Col><Card.Img variant="top" src={avatarURL} style={{ width: '50px' }} />
-                            </Col>
-                            <Col>
-                                <Card.Body>
-                                    <Card.Title style={{ textAlign: 'left' }} >Would You Rather ...</Card.Title>
-                                    <div onChange={this.onChangeValue}>
-                                        <Row style={{ paddingLeft: '10px' }}><input id='op1' type="radio" name='op' value='optionOne' />
-                                            <label htmlFor='op1' style={{ paddingLeft: '10px' }}>{opOnetxt}</label>
-                                        </Row>
-                                        <Row style={{ paddingLeft: '10px' }}><input id='op2' type="radio" name='op' value='optionTwo' />
-                                            <label htmlFor='op2' style={{ paddingLeft: '10px' }}>{opTwotxt}</label>
-                                        </Row>
-                                    </div>
-                                    <Button variant="primary" onClick={this.handleSubmit}>Submit</Button>
-                                </Card.Body>
+            <Card>
+                {// check whether the user has already answered this question. 
+                Object.keys(users[authedUser].answers).indexOf(id) > -1
+                && <Redirect to='/questions' />}
+                
+                <Card.Header style={{ textAlign: 'left' }}>{author} asks:</Card.Header>
+                <Container>
+                    <Row>
+                        <Col><Card.Img variant="top" src={avatarURL} style={{ width: '50px' }} />
+                        </Col>
+                        <Col>
+                            <Card.Body>
+                                <Card.Title style={{ textAlign: 'left' }} >Would You Rather ...</Card.Title>
+                                <div onChange={this.onChangeValue}>
+                                    <Row style={{ paddingLeft: '10px' }}><input id='op1' type="radio" name='op' value='optionOne' />
+                                        <label htmlFor='op1' style={{ paddingLeft: '10px' }}>{opOnetxt}</label>
+                                    </Row>
+                                    <Row style={{ paddingLeft: '10px' }}><input id='op2' type="radio" name='op' value='optionTwo' />
+                                        <label htmlFor='op2' style={{ paddingLeft: '10px' }}>{opTwotxt}</label>
+                                    </Row>
+                                </div>
+                                <Button variant="primary" onClick={this.handleSubmit}>Submit</Button>
+                            </Card.Body>
 
-                            </Col>
-                        </Row>
-                    </Container>
-                </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            </Card>
             )
         }
     }

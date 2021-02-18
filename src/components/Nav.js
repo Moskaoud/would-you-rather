@@ -6,6 +6,7 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
   render() {
+    let { users, authedUser } = this.props
     return (
       <nav className='nav'>
         <ul>
@@ -24,10 +25,10 @@ class Nav extends Component {
               Leader Board
           </NavLink>
           </li>
-          {this.props.authedUser !== null &&
+          {authedUser !== null &&
             <li>
-              Hello, {this.props.users[this.props.authedUser].name}
-              <Image src={this.props.users[this.props.authedUser].avatarURL}
+              Hello, {users[authedUser].name}
+              <Image src={users[authedUser].avatarURL}
                 style={{ width: '20px', marginLeft: '20px', marginRight: '20px' }} />
               <NavLink to='/' activeClassName='active' onClick={() => this.props.dispatch(setAuthedUser(null))}>Logout</NavLink>
             </li>

@@ -96,7 +96,7 @@ class QuestionPage extends Component {
                 Object.keys(users[authedUser].answers).indexOf(id) > -1
                 && <Redirect to='/questions' />}
                 
-                <Card.Header style={{ textAlign: 'left' }}>{author} asks:</Card.Header>
+                <Card.Header style={{ textAlign: 'left' }}>{users[author].name} asks:</Card.Header>
                 <Container>
                     <Row>
                         <Col><Card.Img variant="top" src={avatarURL} style={{ width: '50px' }} />

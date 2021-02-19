@@ -1,6 +1,6 @@
 ### Would you rather
 
-React and Redux project improving the predictability of your application’s state establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
+React and Redux project improving the predictability of application’s state establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
 
 # Project Overview
 In the "Would You Rather?" Project, The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.

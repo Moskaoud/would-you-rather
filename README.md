@@ -2,10 +2,10 @@
 
 React and Redux project improving the predictability of application’s state establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
 # screenshots
-<img src='https://github.com/Moskaoud/would-you-rather/blob/main/Home.png' width=470px/> <img src='https://github.com/Moskaoud/would-you-rather/blob/main/leader%20board.png' width=470px/>
-<img src='https://github.com/Moskaoud/would-you-rather/blob/main/new%20poll.png' width=470px/>
-<img src='https://github.com/Moskaoud/would-you-rather/blob/main/poll.png' width=470px/>
-<img src='https://github.com/Moskaoud/would-you-rather/blob/main/results.png' width=470px/>
+<img src='https://github.com/Moskaoud/would-you-rather/blob/main/Home.png' /> <img src='https://github.com/Moskaoud/would-you-rather/blob/main/leader%20board.png' />
+<img src='https://github.com/Moskaoud/would-you-rather/blob/main/new%20poll.png' />
+<img src='https://github.com/Moskaoud/would-you-rather/blob/main/poll.png' />
+<img src='https://github.com/Moskaoud/would-you-rather/blob/main/results.png' />
 
 
 # Project Overview
